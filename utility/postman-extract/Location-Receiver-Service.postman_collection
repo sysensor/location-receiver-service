@@ -1,0 +1,136 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Location-Receiver-Service",
+		"_postman_id": "787fa43f-6fb8-52a2-b166-e9d7937a7adf",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Location Signal Data API - Query All",
+			"request": {
+				"url": {
+					"raw": "http://localhost:7001/data/signal?search=bus_uuid:'bf4cb437-4881-450b-b0fa-4cfe077b4008'",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7001",
+					"path": [
+						"data",
+						"signal"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "bus_uuid:'bf4cb437-4881-450b-b0fa-4cfe077b4008'",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Location Signal Data API with Search",
+			"request": {
+				"url": {
+					"raw": "http://localhost:7001/data/signal/search/findAllByBusUUID?busUUID=bf4cb437-4881-450b-b0fa-4cfe077b4008&sort=created,desc&page=0&size=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7001",
+					"path": [
+						"data",
+						"signal",
+						"search",
+						"findAllByBusUUID"
+					],
+					"query": [
+						{
+							"key": "busUUID",
+							"value": "bf4cb437-4881-450b-b0fa-4cfe077b4008",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "sort",
+							"value": "created,desc",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "size",
+							"value": "5",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Location Signal Data API Push Signal",
+			"request": {
+				"url": "http://localhost:7001/data/signal",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"bus_uuid\":\"bf4cb437-4881-450b-b0fa-4cfe077b4008\",\n    \"lat\": \"41.000\",\n    \"lng\": \"-80.000\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
